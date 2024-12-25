@@ -6,6 +6,7 @@ import Landing from './Pages/Landing.jsx';
 import Main from './Pages/Main.jsx';
 import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
+import ProtectedRoute from './Components/ProtectedRoute.jsx';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Landing />} />
-          <Route path='/main' element={<Main />} />
+          <Route path='/main' element={<ProtectedRoute><Main/></ProtectedRoute>} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login/>} />

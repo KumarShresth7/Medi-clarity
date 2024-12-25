@@ -23,7 +23,7 @@ const Landing = () => {
           </div>
           <div className='bg-[#1a876a] w-1/3 rounded-2xl'>
             <button className="bg-[#28bf96] w-full text-center font-semibold text-lg p-3 rounded-2xl hover:bg-[hsl(164,50%,27%)]">
-              <Link to='/main'>Try Now</Link>
+              <Link to='/login'>Try Now</Link>
             </button>
           </div>
         </div>
