@@ -4,6 +4,8 @@ import Contact from './Pages/Contact.jsx';
 import About from './Pages/About.jsx';
 import Landing from './Pages/Landing.jsx';
 import Main from './Pages/Main.jsx';
+import Login from './Pages/Login.jsx';
+import Register from './Pages/Register.jsx';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Route path='/main' element={<Main />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/login' element={<Login/>} />
+          <Route path='/register' element={<Register/>} />
         </Routes>
       </BrowserRouter>
     </div>
