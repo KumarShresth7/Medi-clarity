@@ -17,6 +17,9 @@ const pdfExtract = new PDFExtract();
 
 app.use(cors({
     origin: 'http://localhost:3000',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: ['Content-Type', 'Authorization'], 
+    optionsSuccessStatus: 200,
 }));
 app.use(express.json());
 app.use('/api/auth',authRoutes);
