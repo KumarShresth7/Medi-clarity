@@ -6,8 +6,11 @@ import { PDFExtract } from 'pdf.js-extract';
 import * as fs from 'fs/promises';
 import upload from './middlewares/multer.middleware.js';
 import { VertexAI } from '@google-cloud/vertexai';
+import connectDB from './config/db.js';
+import authRoutes from './routes/authRoutes.js';
 
 dotenv.config();
+connectDB();
 
 const app = express();
 const pdfExtract = new PDFExtract();
@@ -16,6 +19,7 @@ app.use(cors({
     origin: 'http://localhost:3000',
 }));
 app.use(express.json());
+app.use('/api/auth',authRoutes);
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
