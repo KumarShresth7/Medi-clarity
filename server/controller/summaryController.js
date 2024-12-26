@@ -1,4 +1,4 @@
-import extractPdfContent from '../utils/pdfExtract.js';
+import pdfExtract from '../utils/pdfExtract.js';
 import generateSummary from '../utils/vertexAI.js';
 
 /**
@@ -11,7 +11,7 @@ const generateSummaryController = async (req, res) => {
         const filePath = req.file.path; 
         console.log('File Path:', filePath);
 
-        const pdfContent = await extractPdfContent(filePath);
+        const pdfContent = await pdfExtract(filePath);
         console.log('PDF Content Extracted:', pdfContent);
 
         const summary = await generateSummary(pdfContent);

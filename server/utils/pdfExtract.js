@@ -1,4 +1,4 @@
-import PDFExtract from 'pdf.js-extract';
+import {PDFExtract} from 'pdf.js-extract';
 
 /**
  * Function to extract text content from a PDF file.
