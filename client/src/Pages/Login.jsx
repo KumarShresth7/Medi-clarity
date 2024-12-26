@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { baseUrl } from '../baseUrl';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -13,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const response = await axios.post(`${baseUrl}/api/auth/login`, formData);
       localStorage.setItem('token', response.data.token); // Store token in localStorage
       console.log('Login successful', response.data.token);
       navigate('/main'); // Redirect to /main after successful login

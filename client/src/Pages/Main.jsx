@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
+import { baseUrl } from '../baseUrl';
 
 const Main = () => {
     const [fileName, setFileName] = useState(null);
@@ -30,7 +31,7 @@ const Main = () => {
         formData.append('file', file);
         try {
             setResult(null)
-            const response = await fetch('http://localhost:5000/api/upload-file', {
+            const response = await fetch(`${baseUrl}/api/upload-file`, {
                 method: 'POST',
                 body: formData,
             });

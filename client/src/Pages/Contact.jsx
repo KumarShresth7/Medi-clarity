@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
+import { baseUrl } from "../baseUrl";
 
 const Contact = () => {
   const formInitialDetails = {
@@ -21,7 +22,7 @@ const Contact = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/send-email', {
+      const response = await fetch(`${baseUrl}/api/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
