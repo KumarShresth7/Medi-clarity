@@ -9,3 +9,5 @@ Images
 /public
 
 /uploads
+
+/config/service-account-key.json
